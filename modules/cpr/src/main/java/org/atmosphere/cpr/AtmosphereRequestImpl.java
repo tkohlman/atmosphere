@@ -805,7 +805,7 @@ public class AtmosphereRequestImpl extends HttpServletRequestWrapper implements 
 
     @Override
     public boolean isAsyncStarted() {
-        if (AtmosphereResource.TRANSPORT.WEBSOCKET == resource().transport()) {
+        if (resource() != null && AtmosphereResource.TRANSPORT.WEBSOCKET == resource().transport()) {
             return noopsAsyncContextStarted;
         }
         try {
